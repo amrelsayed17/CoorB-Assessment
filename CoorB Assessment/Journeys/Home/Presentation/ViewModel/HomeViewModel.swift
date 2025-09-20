@@ -11,13 +11,13 @@ import CoreLocation
 @MainActor
 final class HomeViewModel: ObservableObject {
     @Published private(set) var selectedCountriesList: [Country] = []
+    var allCountriesList: [Country] = []
     @Published var errorMessage: String?
     
     private let getAllCountriesUseCase: GetAllCountriesUseCaseContract
     private let locationManager: LocationManagerContract
     private let maxItems = 5
     private let defaultAlpha2 = "US"
-    private var allCountriesList: [Country] = []
     
     init(
         getAllCountriesUseCase: GetAllCountriesUseCaseContract = GetAllCountriesUseCase(),

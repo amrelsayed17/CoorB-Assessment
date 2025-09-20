@@ -26,7 +26,16 @@ struct HomeView: View {
                     toolbarContent
                 }
             }
-            .task { await viewModel.onAppear() }
+            .task {
+                await viewModel.onAppear()
+            }
+            .sheet(isPresented: $showSearch) {
+                SearchView(allCountries: viewModel.allCountriesList,
+                           onPick: { country in
+                    viewModel.AddSelectedCountry(country: country)
+                    showSearch = false
+                })
+            }
         }
     }
     
@@ -40,7 +49,6 @@ struct HomeView: View {
                 VStack {
                     Text(country.name ?? "")
                     Text(country.capitalDisplay)
-                    Divider()
                 }
             }
             .onDelete(perform: viewModel.removeSelectedCountry)
