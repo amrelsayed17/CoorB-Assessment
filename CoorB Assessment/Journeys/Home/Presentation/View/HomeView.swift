@@ -46,9 +46,11 @@ struct HomeView: View {
     var countryList: some View {
         List {
             ForEach(viewModel.selectedCountriesList) { country in
-                VStack {
-                    Text(country.name ?? "")
-                    Text(country.capitalDisplay)
+                NavigationLink(destination: CountryDetailsView(country: country)) {
+                    VStack {
+                        Text(country.name ?? "")
+                        Text(country.capitalDisplay)
+                    }
                 }
             }
             .onDelete(perform: viewModel.removeSelectedCountry)
