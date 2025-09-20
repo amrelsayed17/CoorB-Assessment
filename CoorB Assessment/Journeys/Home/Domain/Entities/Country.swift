@@ -9,12 +9,14 @@ import Foundation
 
 public struct Country: Codable, Identifiable, Equatable {
     public let name: String?
-    public let alpha3Code: String?
+    public let alpha2Code: String?
     public let capital: String?
     public let currencies: [Currency]?
     public let latlng: [Double]?
     
-    public var id: String { alpha3Code ?? "" }
+    public var id: String {
+        alpha2Code ?? ""
+    }
     
     public var capitalDisplay: String {
         capital ?? "-"
