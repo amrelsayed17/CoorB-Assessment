@@ -21,5 +21,8 @@ enum MockData {
 
     static let kw = Country(name: "Kuwait", alpha2Code: "KW", capital: "Kuwait City", currencies: nil, latlng: nil)
 
-    static let sampleList: [Country] = [eg, ae, sa, qa, jo, kw]
+    static let usa = Country(name: "United States of America", alpha2Code: "US", capital: "Washington, D.C.", currencies: nil, latlng: nil)
+
+    static let sampleList: [Country] = [eg, ae, sa, qa, jo, kw, usa]
+    static let emptyList: [Country] = []
 }
