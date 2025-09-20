@@ -23,8 +23,8 @@ public struct Country: Codable, Identifiable, Equatable {
     }
     
     public var currencyDisplay: String {
-        guard let c = currencies?.first else { return "—" }
-        return [c.code, c.name, c.symbol].compactMap { $0 }.joined(separator: " ")
+        guard let currency = currencies?.first else { return "—" }
+        return [currency.name, currency.code, currency.symbol].compactMap { $0 }.joined(separator: "-")
     }
 }
 
