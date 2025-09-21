@@ -9,5 +9,4 @@ import Foundation
 
 protocol CountriesRepositoryContract {
     func fetchAllCountries(forceRefresh: Bool) async throws -> [Country]
-    func cachedCountries() async -> [Country]
 }
